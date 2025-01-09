@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
 
   middleImage: {
-    width: 290,
+    width: 320,
     height: 50,
     resizeMode: 'contain',
   },
