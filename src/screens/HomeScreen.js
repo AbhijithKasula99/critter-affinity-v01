@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import { colors } from '../styles/colors';
+import Button  from '../components/Button';
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -10,12 +11,12 @@ export default function HomeScreen({ navigation }) {
       <Image source={require('../assets/images/Logo.png')} style={styles.topImage} />
 
       {/* Login Button */}
-      <TouchableOpacity
-        style={[styles.button, styles.loginButton]}
+      <Button
+        text="Login"
         onPress={() => navigation.navigate('LoginScreen')}
-      >
-        <Text style={[styles.buttonText, styles.loginButtonText]}>Login</Text>
-      </TouchableOpacity>
+        style={styles.loginButton}
+        textStyle={styles.loginButtonText}
+      />
 
       {/* New.png Illustration */}
       <Image source={require('../assets/images/New.png')} style={styles.middleImage} />
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     marginBottom: 160,
   },
+  
   button: {
     width: '80%',
     paddingVertical: 15,
@@ -80,7 +82,7 @@ const styles = StyleSheet.create({
   },
 
   middleImage: {
-    width: 290,
+    width: 320,
     height: 50,
     resizeMode: 'contain',
   },

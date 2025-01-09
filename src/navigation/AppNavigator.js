@@ -21,7 +21,7 @@ export default function AppNavigator() {
         component={HomeScreen}
         options={{ headerShown: false }} // Hide header for HomeScreen
       />
-      <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ title: 'Login' }} />
+      <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ title: 'Login', headerShown: false }} />
     </Stack.Navigator>
   );
 }
