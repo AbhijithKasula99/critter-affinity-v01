@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import { colors } from '../styles/colors';
-import Button  from '../components/Button';
+import Button from '../components/Button';
+import DividerWithText from '../components/DividerwithText'; // Importing the reusable divider component
 
 export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-
       {/* Top Illustration */}
       <Image source={require('../assets/images/Logo.png')} style={styles.topImage} />
 
@@ -18,8 +18,8 @@ export default function HomeScreen({ navigation }) {
         textStyle={styles.loginButtonText}
       />
 
-      {/* New.png Illustration */}
-      <Image source={require('../assets/images/New.png')} style={styles.middleImage} />
+      {/* Divider with Text */}
+      <DividerWithText text="New to PetConnect?" />
 
       {/* Create PetConnect Account Button */}
       <TouchableOpacity style={[styles.button, styles.signupButton]}>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     marginBottom: 160,
   },
-  
+
   button: {
     width: '80%',
     paddingVertical: 15,
@@ -81,18 +81,12 @@ const styles = StyleSheet.create({
     color: colors.primary,
   },
 
-  middleImage: {
-    width: 320,
-    height: 50,
-    resizeMode: 'contain',
-  },
-
   bottomImage: {
     position: 'absolute',
-    bottom: 0, // Stick to the bottom of the screen
-    width: '100%', // Full width of the screen
-    height: undefined, // Maintain aspect ratio
-    aspectRatio: 4, // Replace with your Bottom.png aspect ratio (width/height)
-    resizeMode: 'absolute', // Ensure it fills the width without stretching
+    bottom: 0,
+    width: '100%',
+    height: undefined,
+    aspectRatio: 4,
+    resizeMode: 'absolute',
   },
 });
